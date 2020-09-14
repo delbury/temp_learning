@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
-  mode: 'none',
+  mode: 'none', // production
   entry: {
     app: './src/views/index.js'
   },
@@ -12,6 +12,11 @@ module.exports = {
     filename: '[name].bundle.js',
     path: path.resolve('dist'),
     publicPath: '/',
+  },
+  optimization: {
+    sideEffects: true,
+    usedExports: true,
+    providedExports: true,
   },
   devtool: 'source-map',
   devServer: {
@@ -31,6 +36,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Demo HTML'
     }),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
   ]
 };

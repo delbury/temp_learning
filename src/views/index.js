@@ -4,4 +4,12 @@ import { print, output, abc } from './pkg/option';
 print('heooloo');
 output('ok2');
 
-// https://segmentfault.com/q/1010000018871965
+class Demo {
+  constructor() {
+    this.name = 'demo';
+  }
+
+  jump() {
+    console.log('jump');
+  }
+}

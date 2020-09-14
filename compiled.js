@@ -1,8 +1,15 @@
-import { print } from './option';
-var temp = {};
-var num = Math.pow(2, 10);
+import { output } from './pkg/option';
 
-var fn = function fn() {};
+var Test = /*#__PURE__*/function () {
+  function Test() {
+    this.name = 233;
+  }
 
-print('heooloo');
-print('ok2');
+  var _proto = Test.prototype;
+
+  _proto.run = function run() {
+    console.log('run');
+  };
+
+  return Test;
+}();
