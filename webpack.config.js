@@ -10,8 +10,9 @@ module.exports = {
   },
   output: {
     filename: '[name].bundle.js',
+    // filename: '[name].[hash].bundle.js',4
     path: path.resolve('dist'),
-    publicPath: '/',
+    publicPath: './',
   },
   optimization: {
     sideEffects: true,
@@ -32,6 +33,9 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('test-none')
+    }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: 'Demo HTML'
