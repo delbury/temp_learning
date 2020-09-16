@@ -6,7 +6,8 @@ const webpack = require('webpack');
 module.exports = {
   mode: 'none', // production
   entry: {
-    app: './src/views/index.js'
+    app: './src/views/index.js',
+    sub: './src/views/sub.js'
   },
   output: {
     filename: '[name].bundle.js',
@@ -41,5 +42,8 @@ module.exports = {
       title: 'Demo HTML'
     }),
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'common'
+    }),
   ]
 };
